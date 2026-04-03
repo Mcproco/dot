@@ -13,7 +13,6 @@ return {
 					"fortls",
 					"bashls",
 					"omnisharp",
-					"cmake",
 					"lua_ls",
 					"gopls",
 					"templ",
