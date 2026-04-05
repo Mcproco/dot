@@ -301,3 +301,13 @@ label:focus {
 #privacy-item.audio-out {
     background-color: #0069d4;
 }
+
+#taskbar button {
+    -gtk-icon-transform: scale(20);
+    -gtk-icon-effect: highlight;
+}
+
+#taskbar button.active {
+    color: #000000;
+    background-color: #ffffff;
+}
