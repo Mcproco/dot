@@ -1,0 +1,1 @@
+/home/Mark/.config/hypr/bash/../themes/kshark/quickshell/shell.qml

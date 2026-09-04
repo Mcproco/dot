@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=/bin/imv
+MimeType=image/jpeg;
+Name=imv
+NoDisplay=true
+Type=Application

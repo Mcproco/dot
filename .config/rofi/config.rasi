@@ -1,0 +1,70 @@
+* {
+    background: rgba (0, 0, 0, 70%);
+    foreground: rgba (255, 255, 255, 100%);
+    separatorcolor: rgba (255, 255, 255, 7%);
+    h1: "JetBrainsMono Nerd Font Bold 15";
+}
+
+configuration {
+    show-icons: false;
+}
+
+window {
+    background-color: @background;
+    border: 0px;
+    width: 18em;
+    height: 11em;
+    padding: 5px 5px 7px 8px;
+    //top right bottom left
+}
+
+
+textbox {
+    text-color: @foreground;
+}
+
+listview {
+    fixed-height: true;
+    border: 2px solid 0px 0px;
+    border-color: @separatorcolor;
+    scrollbar: false;
+    spacing: 12px;
+    padding: 15px 0px 0px 0px;
+}
+
+element {
+    border: 0;
+    background-color: @background;
+    padding: 0px 0px 0px 15px;
+}
+
+element-text {
+    background-color: inherit;
+    text-color: @foreground;
+    font: "JetBrainsMono Nerd Font 11.25";
+}
+
+element.normal.normal {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+element selected.normal {
+    background-color: inherit;
+    text-color: inherit;
+    border: 0px 0px 0px 6px;
+}
+
+element.alternate.normal {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+prompt { font: @h1; }
+textbox-prompt-colon { font: @h1; }
+entry { font: @h1; placeholder: ""; }
+inputbar {
+    padding: 5px 0px 5px 0px;
+    children: [prompt, textbox-prompt-colon, entry, case-indicator];
+}
+

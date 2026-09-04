@@ -1,0 +1,15 @@
+[StreamInputs]
+inputDevice=alsa_input.usb-Generic_Blue_Microphones_LT_2007291425275F3900D5_111000-00.analog-stereo
+plugins=bass_enhancer#0,rnnoise#0
+visiblePage=pluginsPage
+visiblePlugin=rnnoise#0
+
+[StreamOutputs]
+outputDevice=alsa_output.pci-0000_0e_00.4.analog-stereo
+plugins=bass_enhancer#0,bass_enhancer#1
+visiblePage=pluginsPage
+visiblePlugin=bass_enhancer#1
+
+[Window]
+height=1033
+width=1900
