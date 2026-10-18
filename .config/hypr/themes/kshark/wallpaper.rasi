@@ -1,0 +1,173 @@
+/*****----- Configuration -----*****/
+configuration {
+	modi:                       "drun";
+    show-icons:                 true;
+}
+
+/*****----- Global Properties -----*****/
+
+* {
+    background:     rgba (0, 0, 0, 70%);
+    background-alt: rgba (255, 255, 255, 10%);
+    foreground:     rgba (255, 255, 255, 100%);
+    selected:       rgba (255, 255, 255, 10%);
+    active:         #98C379FF;
+    urgent:         #E06B74FF;
+    separatorcolor: rgba (255, 255, 255, 7%);
+}
+* {
+    h1: "JetBrainsMono Nerd Font Bold 15";
+    font: "JetBrains Mono 8";
+}
+
+/*****----- Main Window -----*****/
+window {
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       80%;
+    height:                      40%;
+    x-offset:                    0px;
+    y-offset:                    0px;
+
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     5px 5px 7px 8px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @background;
+    background-color:            @background;
+    cursor:                      "default";
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    enabled:                     true;
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px 0px 0px 0px;
+    border-color:                @selected;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview" ];
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+    enabled:                     true;
+    padding:                     5px 0px 5px 0px;
+    border-color:                @selected;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    children:                    [ "prompt", "entry"];
+}
+
+prompt { 
+    font: @h1; 
+    background-color:            transparent;
+    text-color:                  @foreground;
+}
+
+textbox-prompt-colon { 
+    font: @h1; 
+    background-color:            transparent;
+    text-color:                  @foreground;
+}
+
+entry { 
+    font: @h1; placeholder: ""; 
+    background-color:            transparent;
+    text-color:                  @foreground;
+}
+
+/*****----- Listview -----*****/
+listview {
+    enabled:                     true;
+    columns:                     6;
+    lines:                       0;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     12px;
+    margin:                      0px;
+    padding:                     15px 0px 0px 0px;
+    border:                      2px solid 0px 0px;
+    border-radius:               0px;
+    border-color:                @separatorcolor;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      "default";
+    vertical-align:              0.5;
+}
+scrollbar {
+    handle-width:                5px ;
+    handle-color:                @selected;
+    border-radius:               0px;
+    background-color:            @background-alt;
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     0px 0px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @selected;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    orientation:                 vertical;
+    cursor:                      pointer;
+}
+element normal.normal {
+    background-color:            transparent;
+    text-color:                  @foreground;
+}
+element selected.normal {
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+    border-color:                @foreground;
+}
+element-icon {
+    squared: true;
+    padding:                     0px 0px 0px 0px;
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        350px;
+    expand:                      true;
+    cursor:                      inherit;
+    vertical-align: 0.5;
+}
+element-text {
+    enabled: false;
+    background-color:            transparent;
+    text-color:                  inherit;
+    highlight:                   inherit;
+    cursor:                      inherit;
+    size: 0px;
+    vertical-align: 0.5;
+}
+
+/*****----- Message -----*****/
+error-message {
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @selected;
+    background-color:            @background;
+    text-color:                  @foreground;
+}
+textbox {
+    background-color:            @background;
+    text-color:                  @foreground;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+    highlight:                   none;
+}
