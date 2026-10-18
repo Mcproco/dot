@@ -113,6 +113,13 @@ local animations = {
 local window_rules = {
     {
         match = {
+            class = "org.kde.dolphin"
+        },
+        float = true,
+        size = {800, 500}
+    },
+    {
+        match = {
             class = "kitty"
         },
 
@@ -125,7 +132,14 @@ local window_rules = {
         },
 
         border_size = 3,
-    }
+    },
+    {
+        match = {
+            initial_title = "Godot",
+        },
+
+        float = true,
+    },
 }
 
 local layer_rules = {
@@ -156,6 +170,14 @@ local load = function ()
             name = "Vesktop_Opaque",
             match = {
                 class = "vesktop"
+            },
+            opacity = 0.85,
+        })
+
+        hl.window_rule({
+            name = "Dolphin_Opaque",
+            match = {
+                class = "org.kde.dolphin"
             },
             opacity = 0.85,
         })

@@ -6,6 +6,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("wayscriber --daemon")
     hl.exec_cmd("qs -p $(realpath ~/.config/hypr/target/shell.qml)")
     hl.exec_cmd("kded6")
+    hl.exec_cmd("easyeffects -w")
 
     local loadTheme = require("./src/utility/loadtheme")
     if loadTheme then

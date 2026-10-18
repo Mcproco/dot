@@ -3,12 +3,21 @@ amount=10
 
 [soe][BassEnhancer#0]
 amount=5
-bypass=true
-floor=10
+blend=-1
+floor=40
 harmonics=6
 outputGain=1
 
 [soe][BassEnhancer#1]
 amount=5
+bypass=true
 harmonics=10
 scope=125
+
+[soe][BassEnhancer#2]
+amount=5
+blend=-9
+bypass=true
+floor=120
+harmonics=10
+scope=250

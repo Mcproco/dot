@@ -1,10 +1,16 @@
 #!/usr/bin/env bash
 
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-THEMES_DIR=$SCRIPT_DIR/../themes
-THEME_NAME=$(cat $SCRIPT_DIR/../target/theme)
-#TARGET=$(ls $THEMES_DIR/$THEME_NAME/wallpapers/ | rofi -dmenu)
-TARGET=$(ls ~/Pictures/Wallpapers/ | rofi -dmenu -window-title "Wallpaper")
+IMG_PICKER_CONFIG="$HOME/.config/hypr/themes/kshark/wallpaper.rasi"
+WALLPAPER_DIR="$HOME/Pictures/Wallpapers/"
+WALLPAPER_FILES=$(find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.jpeg" \))
+ROFI_MENU=""
+
+while IFS= read -r WALLPAPER_PATH; do
+    WALLPAPER_NAME=$(basename "$WALLPAPER_PATH")
+    ROFI_MENU+="${WALLPAPER_NAME}\0icon\x1f${WALLPAPER_PATH}\n"
+done<<<"$WALLPAPER_FILES"
+
+TARGET=$(echo -e "$ROFI_MENU" | rofi -dmenu -p "Wallpaper: " -theme "$IMG_PICKER_CONFIG" -markup-rows)
 
 if [[ -z "$TARGET" ]] then
     exit 0
