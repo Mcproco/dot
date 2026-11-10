@@ -10,7 +10,6 @@ outputGain=1
 
 [soe][BassEnhancer#1]
 amount=5
-bypass=true
 harmonics=10
 scope=125
 
